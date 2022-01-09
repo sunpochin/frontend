@@ -1,0 +1,9 @@
+p {
+  color: red;
+}
+
+@media screen and (max-width: 767px) {
+  p {
+    color: blue;
+  }
+}
