@@ -1,0 +1,175 @@
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  font-family: "Lato", "Noto Sans TC", sans-serif;
+  margin: 0;
+  padding: 0;
+  color: #333333;
+  background-color: #f6f7f8;
+}
+
+/* Header */
+header {
+  height: 60px;
+  color: #666666;
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.08);
+}
+
+nav {
+  height: 100%;
+  padding: 0 20px;
+}
+
+.nav-title {
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.nav-link {
+  color: #666666;
+}
+
+/* Main */
+main {
+  padding: 40px 20px;
+}
+
+h2 {
+  font-size: 32px;
+  margin: 24px 0 8px;
+}
+
+h3 {
+  font-size: 21px;
+  margin: 0 0 8px 0;
+  font-weight: 500;
+}
+
+section {
+  margin-bottom: 48px;
+}
+
+p {
+  color: #666666;
+}
+
+/* Personal Info */
+
+.personal-info {
+  text-align: center; /* 內容置中 */
+}
+
+.avatar-img {
+  border-radius: 25px; /* 圓框效果 */
+}
+
+.name {
+  font-size: 32px;
+  margin: 20px 0;
+}
+
+.social-media {
+  margin-bottom: 20px;
+}
+
+.social-media-link {
+  color: #999999;
+  text-decoration: none; /* 沒有底線 */
+  margin: 0 5px;
+}
+
+.social-media-link:hover {
+  /* 滑鼠移過時啟用這組設定 */
+  color: #ff6600;
+}
+
+.title {
+  margin-bottom: 20px;
+  text-align: center;
+  font-size: 14px; /* 內容置中 */
+  letter-spacing: 2px; /* 字元間距 */
+  color: #ff6600;
+}
+
+/* Skill Section */
+.skill-name {
+  border-top: 1px solid #999999;
+  padding-top: 16px;
+}
+
+/* Experience Section */
+hr {
+  border: 0px;
+  height: 1px;
+  background: #cccccc;
+  margin: 20px 0;
+}
+
+.company,
+.duration {
+  color: #666666;
+  font-size: 12px;
+  margin-right: 20px;
+}
+
+.fa-building,
+.fa-calendar-alt {
+  margin-right: 5px;
+}
+
+/* my fix */
+.personal {
+  text-align: center;
+}
+/* p {
+  width: 100%;
+}
+*/
+.nav-link {
+  text-align: right;
+  place-items: right;
+  align-items: right;
+}
+
+
+@media screen and (min-width: 576px) {
+  .skillset {
+    display: flex;
+    gap: 10px;
+  }
+  .skill {
+    flex: 1;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+ 
+  main {
+    display: flex;
+    gap: 20px;
+    /* flex-direction: column; */
+  }
+  .personal {
+    width: 30%;
+    max-width: 300px;
+  }
+
+  .skills-and-jobs{
+    gap: 10px;
+    width: 70%;
+  }
+  .experience {
+    display: flex;
+    gap: 10px;
+  }
+  .experience-item {
+    flex: 1;
+  }
+  /* .skill {
+    flex: 1;
+  }
+  */
+}
