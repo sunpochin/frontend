@@ -1,0 +1,21 @@
+.wrapper {
+  display: grid;
+  grid-template-rows: 75px 75px 75px;
+  grid-template-columns: 100px 100px 100px;
+  grid-gap: 5px 20px;
+}
+
+.wrapper div {
+  background-color: #163a59;
+  font-family: 'Open Sans';
+  font-size: 30px;
+  color:#FF6600;
+  text-align: center;
+  border: 2px solid;
+}
+
+.item1 {
+  grid-column: 1 / 4;
+  /* grid-column-start: 1;
+  grid-column-end: 4; */
+}

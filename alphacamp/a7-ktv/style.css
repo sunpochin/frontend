@@ -1,0 +1,73 @@
+html, body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0;
+  margin: 0;
+  background: #F2EDE4;
+}
+
+section {
+  height: auto;
+  padding: 10px;
+  margin: 20px auto;
+  color: #000;
+  background: #ffffff;
+}
+
+
+/* my styles */
+.container {
+  position: relative;
+  width: 500px;
+  height: auto;
+  min-width: 60%;
+  min-height: 80%;
+  padding: 10px;
+  background: #4393D9;
+  box-shadow:-4px 4px 10px 3px rgba(50, 50, 50, 0.75);
+}
+
+.title {
+  color: #f5f1da;
+  text-align: center;
+}
+
+span:hover {
+  color: #000;
+  background: #ff0;
+}
+
+span.highlight {
+  padding: 5px 5px 2px 5px;
+  margin: auto 5px;
+  border-radius: 5px;
+  height: 16px;
+  background: #FF6600;
+  color: #fff;
+}
+/* 請撰寫其他的選擇器來覆蓋 .highlight 的效果！ */
+
+p > span.highlight {
+  background: #000000;
+}
+
+p > span:hover {
+  color: #000;
+  background: #ff0;
+}
+
+
+
+/* 1. 請解釋為什麼原本 span 標籤的 hover 效果會顯示不出來:
+
+因為CSS檔案中撰寫順序，第42行的 span.highlight會覆蓋第37行的span:hover，且兩者為HTML內部載入的標籤，specificity score 皆為 0-1-1。
+若第37行加上p標籤，改成 p > span:hover，specificity score為0-1-2，hover效果就可以顯示。
+
+2. 請舉三種可以將關鍵單詞修改成黑底、白字的選擇器:
+分別使用不同的specificity score，
+
+    specificity score為0-1-1:  p > .highlight 
+    specificity score為0-1-2:  p > span.highlight 
+    specificity score為0-1-3:  section p > span.highlight  */

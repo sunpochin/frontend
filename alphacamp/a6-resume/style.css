@@ -128,20 +128,20 @@ hr {
   width: 100%;
 }
 */
-.nav-link {
-  text-align: right;
-  place-items: right;
-  align-items: right;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 
 @media screen and (min-width: 576px) {
   .skillset {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
   }
   .skill {
-    flex: 1;
+    flex-basis: 30%;
   }
 }
 
@@ -149,12 +149,11 @@ hr {
  
   main {
     display: flex;
-    gap: 20px;
+    justify-content: space-evenly;
     /* flex-direction: column; */
   }
   .personal {
-    width: 30%;
-    max-width: 300px;
+    flex-basis: 25%;
   }
 
   .skills-and-jobs{
@@ -163,10 +162,10 @@ hr {
   }
   .experience {
     display: flex;
-    gap: 10px;
+    justify-content: space-between;
   }
   .experience-item {
-    flex: 1;
+    flex-basis: 30%;
   }
   /* .skill {
     flex: 1;

@@ -1,0 +1,40 @@
+/**************************************
+LAYOUT CSS
+**************************************/
+
+.wrapper {
+  max-width: 992px;
+  margin: 50px auto;
+}
+
+/**************************************
+CSS TO MAKE THE EXAMPLE LOOK PRETTY
+**************************************/
+
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  background: #FFF;
+  color: #FFF;
+  font-family: 'Open Sans';
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin: 0;
+}
+
+.one, .two, .three, .four, .five, .six, .seven {
+  background-color: #163A59;
+  color: #FF6600;
+  border: 2px solid;
+  box-sizing: border-box;
+  min-height: 100px;
+  line-height: 100px;
+  text-align: center;
+}
+
+

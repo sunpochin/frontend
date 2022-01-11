@@ -1,0 +1,13 @@
+.container {
+  margin-top: 50px;
+}
+
+[class*="col"] {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    height: 3.625rem;
+    text-align: center;
+    color: #163A59; 
+    background-color: #FF6600;
+    border: 1px solid #163A59;
+}

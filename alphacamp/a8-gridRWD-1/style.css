@@ -1,0 +1,15 @@
+.wrapper div {
+  background-color: #163a59;
+  font-family: 'Open Sans';
+  font-size: 30px;
+  color:#FF6600;
+  text-align: center;
+  border: 2px solid;
+}
+
+.wrapper {
+  display: grid;
+  grid-template-rows: 50px 100px;
+  grid-template-columns: 200px 200px 100px 100px;
+  grid-gap: 20px 10px;
+}
