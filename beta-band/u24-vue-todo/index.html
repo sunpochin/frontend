@@ -1,0 +1,63 @@
+<link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/todomvc-app-css@2.3.0/index.css">
+
+<div id="app">
+  <section class="todoapp">
+    <header>
+      <h1>{{title}}</h1>
+    </header>
+    <input type="text" class="new-todo" autofocus placeholder="需要做什麼？" />       
+    
+    <main class="main" v-bind:hello="message">
+      <input id="toggle-all" type="checkbox" class="toggle-all" />
+      <label for="toggle-all"></label>
+      <ul class="todo-list">
+        <li class="todo" :class="{completed: firstTodo.completed}">
+          <div class="view">
+            <input type="checkbox" class="toggle" />
+            <label for="">{{firstTodo.title}}</label>
+            <button class="destroy"></button>
+          </div>
+          <input type="text" class="edit" />
+        </li>
+        <li class="todo" :class="{completed: secondTodo.completed}">
+          <div class="view">
+            <input type="checkbox" class="toggle" />
+            <label for="">{{secondTodo.title}}</label>
+            <button class="destroy"></button>
+          </div>
+          <input type="text" class="edit" />
+        </li>
+        <li class="todo" :class="{completed: thirdTodo.completed}">
+          <div class="view">
+            <input type="checkbox" class="toggle" />
+            <label for="">{{thirdTodo.title}} </label>
+            <button class="destroy"></button>
+          </div>
+          <input type="text" class="edit" />
+        </li>
+      </ul>
+    </main>    
+    
+    <footer class="footer">
+      <span class="todo-count"> <strong>3</strong> items left </span>
+      <ul class="filters">
+        <li>
+          <a href="#/all">All</a>
+        </li>
+        <li>
+          <a href="#/active">Active</a>
+        </li>
+        <li>
+          <a href="#/completed">Completed</a>
+        </li>
+      </ul>
+      <button class="clear-completed">
+        Clear completed
+      </button>
+    </footer>
+  </section>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"> </script>
+  <script src="script.js"> </script>
+
+</div>
