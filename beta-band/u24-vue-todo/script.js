@@ -1,13 +1,26 @@
+const filters = {
+  all: (todos) => todos,
+  active: (todos) => todos.filter((todo) => !todo.completed),
+  completed: (todos) => todos.filter((todo) => todo.completed),
+}
+
 Vue.config.devtools = true;
 new Vue({
   el:'#app',
   computed: {
-    activeTodos() {
-      console.log('activeTodos');
-      return this.todos.filter(todo => !todo.completed).length
+    filteredTodos() {
+      return filters[this.visibility](this.todos)
+    },
+    remaining() {
+      console.log('remaining');
+      return filters.active(this.todos).length
     }    
   },
   methods: {
+    setVisibility(visibility) {
+      console.log('user choose visibility is:', visibility)  
+      this.visibility = visibility;
+    },
     getActiveTodos() {
       console.log('getActiveTodos');
       return this.todos.filter(todo => !todo.completed).length
@@ -46,6 +59,7 @@ new Vue({
   },
   data: {
     title: '哈嘍，Vue',
+    visibility: 'all',
     message: 'message, vue',
     isShowFooter: true,
     newTodo: '',
