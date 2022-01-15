@@ -7,6 +7,14 @@ const filters = {
 Vue.config.devtools = true;
 new Vue({
   el:'#app',
+  filters: {
+    pluralize(n) {
+      return n === 1 ? 'item' : 'items';
+    },
+    toUpperCase(sentence) {
+      return sentence.toUpperCase();
+    },
+  },
   computed: {
     filteredTodos() {
       return filters[this.visibility](this.todos)
@@ -17,6 +25,10 @@ new Vue({
     }    
   },
   methods: {
+    clearCompleted() {
+      // this.todos = this.todos.filter(todo => !todo.completed)
+      this.todos = filters.active(this.todos);
+    },
     setVisibility(visibility) {
       console.log('user choose visibility is:', visibility)  
       this.visibility = visibility;

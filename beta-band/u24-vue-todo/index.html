@@ -27,25 +27,26 @@
     
     <footer class="footer" v-show="todos.length">
       <span class="todo-count"> 
-        <strong>{{remaining }}</strong> items left </span>
+        <!-- <strong>{{remaining }}</strong> items left </span> -->
+        <strong> {{ remaining }} </strong> {{ remaining | pluralize }} </span>
       <ul class="filters">
         <li>
           <a href="#/all" 
-          :class = "{selected: visibility==='all'}"
+          :class = "{selected: visibility === 'all'}"
           @click="setVisibility('all')" >All</a>
         </li>
         <li>
           <a href="#/active" 
-          :class = "{selected: visibility==='active'}"
+          :class = "{selected: visibility === 'active'}"
           @click="setVisibility('active')">Active</a>
         </li>
         <li>
           <a href="#/completed"
-          :class = "{selected: visibility==='completed'}"
+          :class = "{selected: visibility === 'completed'}"
           @click="setVisibility('completed')">Completed</a>
         </li>
       </ul>
-      <button class="clear-completed">
+      <button class="clear-completed" @click="clearCompleted">
         Clear completed
       </button>
     </footer>
