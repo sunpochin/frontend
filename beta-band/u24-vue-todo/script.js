@@ -1,3 +1,5 @@
+const STORAGE_KEY = 'todomvc-app-vue'
+
 const filters = {
   all: (todos) => todos,
   active: (todos) => todos.filter((todo) => !todo.completed),
@@ -7,6 +9,24 @@ const filters = {
 Vue.config.devtools = true;
 new Vue({
   el:'#app',
+  created() {
+    this.todos = JSON.parse(localStorage.getItem(STORAGE_KEY) ) || [];
+    console.log('LIFE: created: ', this.todos);
+  },
+  mounted() {
+    console.log('LIFE: mounted');
+  },
+  updated() {
+    console.log('LIFE: updated');
+  },
+  watch: {
+    todos: {
+      handler: function() {
+        this.saveStorage();
+      },
+      deep: true,
+    },
+  },
   filters: {
     pluralize(n) {
       return n === 1 ? 'item' : 'items';
@@ -25,6 +45,28 @@ new Vue({
     }    
   },
   methods: {
+    cancelEdit() {
+      this.currentEditTodo = {}
+    },
+    doneEdit() {
+      this.todos = this.todos.map(todo => {
+        if (todo.id === this.currentEditTodo.id) {
+          return {
+            ...this.currentEditTodo
+          }
+        } else {
+          return todo
+        }
+      }).filter(todo => todo.title.trim())
+      this.currentEditTodo = {}
+    },
+    editTodo(todo) {
+      this.currentEditTodo = { ...todo };
+    },
+    saveStorage() {
+      console.log('Save to Storage');
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(this.todos) );
+    },
     clearCompleted() {
       // this.todos = this.todos.filter(todo => !todo.completed)
       this.todos = filters.active(this.todos);
@@ -71,6 +113,7 @@ new Vue({
   },
   data: {
     title: '哈嘍，Vue',
+    currentEditTodo: {},     //新增這裡
     visibility: 'all',
     message: 'message, vue',
     isShowFooter: true,

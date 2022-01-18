@@ -14,13 +14,19 @@
         <li v-for="todo in filteredTodos" 
           :key="todo.id"
           class="todo" 
-          :class="{completed: todo.completed}">
+          :class="{completed: todo.completed,
+                editing: todo.id === currentEditTodo.id }">
           <div class="view">
             <input v-model="todo.completed" class="toggle" type="checkbox"/>
-            <label for="">{{todo.title}}</label>
+            <label for="" @dblclick="editTodo(todo)">{{todo.title}}</label>
             <button @click="removeTodo(todo)" class="destroy"></button>
           </div>
-          <input type="text" class="edit" />
+          <input v-model="currentEditTodo.title"
+          type="text" class="edit"
+          @keyup.esc="cancelEdit"
+          @keyup.enter="doneEdit"
+          @blur="doneEdit"
+          />
         </li>
       </ul>
     </main>    
