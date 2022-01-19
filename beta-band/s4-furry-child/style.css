@@ -204,10 +204,41 @@ header {
   background-image: url("https://images.unsplash.com/photo-1535294435445-d7249524ef2e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2250&q=80");
 }
 
+.main-banner,
+.sub-banner {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
 
-
-
-
+.banner-title {
+  margin-bottom: 0.4rem;
+}
+.main-banner .banner-title {
+  font-size: 2rem;
+  color: #1a5366;
+}
+.banner-description {
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+.main-banner .banner-description {
+  color: #267b98;
+  font-size: 1rem;
+}
+.sub-banner .action {
+  font-size: 1rem;
+  padding: 0.25rem 1rem;
+}
+.sub-banner .banner-title,
+.sub-banner .banner-description {
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 1px;
+}
 
 /********* 電腦版樣式 *********/
 @media screen and (min-width: 768px) {
@@ -253,6 +284,31 @@ header {
 
   .nav-item{
     margin: 2 2rem;
+  }
+
+  .banner-wrapper {
+    /*修改數值為1.5rem*/
+    grid-gap: 1.5rem;
+    /*修改名字和排列順序*/
+    grid-template-areas:
+      "main main main left"
+      "main main main right";
+  }
+  .main-banner {
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .main-banner .banner-title {
+    font-size: 4rem;
+  }
+  .main-banner .banner-description {
+    font-size: 2rem;
+  }
+  .sub-banner .banner-title {
+    font-size: 2rem;
+  }
+  .sub-banner .action {
+    font-size: 1.2rem;
   }
 
 }
