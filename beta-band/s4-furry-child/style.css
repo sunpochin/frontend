@@ -91,7 +91,7 @@ header {
   top: 100%;
   width: 100%;
   background: #fff;
-  /* border:1px solid grey /*暫時加上邊框，以利於辨識位置*/   */
+  /* border:1px solid grey /*暫時加上邊框，以利於辨識位置*/
 }
 
 .navbar-brand{
@@ -294,6 +294,79 @@ header {
   opacity: 0.4;
 }
 
+.card::before,
+.card::after {
+  content: "";
+  position: absolute;
+  top: 1rem;
+  bottom: 1rem;
+  left: 1rem;
+  right: 1rem;
+  /*以下這行註解起來或刪掉*/
+  /* border:1px solid white; */
+  transition: transform 0.3s ease-out;
+}
+.card::before {
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+  transform: scale(0, 1);
+}
+.card::after {
+  border-left: 1px solid white;
+  border-right: 1px solid white;
+  transform: scale(1, 0);
+}
+.card:hover::before {
+  transform: scale(1.05, 1);
+}
+.card:hover::after {
+  transform: scale(1, 1.05);
+}
+
+/* Adoption */
+.adoption-wrapper {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 135px;
+  width: 100%;
+  background: #fff;
+  -webkit-box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 10px 12px 0px rgba(0, 0, 0, 0.1);  
+}
+.adoption-image {
+  width: 100%;
+}
+.adoption-info {
+  display: grid;
+  align-content: center;
+  justify-items: center;
+  padding: 1.2rem;
+}
+.adoption-info .title {
+  font-size: 1.75rem;
+  margin-bottom: 0.4rem;
+  color: #267c99;
+}
+.adoption-info .description {
+  font-size: 1rem;
+  margin-bottom: 0.9rem;
+  color: #5e5c5c;
+}
+/* Footer */
+/*Footer*/
+footer {
+  width: 100%;
+  text-align: center;
+  background: #4a4a4a;
+  padding: 1rem;
+  color: white;
+  letter-spacing: 2px;
+}
+html {
+  scroll-behavior: smooth;
+}
+
 /********* 電腦版樣式 *********/
 @media screen and (min-width: 768px) {
   /*Main Header*/
@@ -364,8 +437,22 @@ header {
   .sub-banner .action {
     font-size: 1.2rem;
   }
-
-
+  /* Adoption */
+  .adoption-wrapper {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 2rem;
+  }
+  .adoption-info {
+    justify-items: start;
+  }
+  .adoption-info .title {
+    font-size: 3rem;
+  }
+  .adoption-info .description {
+    font-size: 1.875rem;
+  }
+  
 }
 
 /* .container {
