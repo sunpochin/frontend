@@ -9,12 +9,12 @@ const Counter = () => {
   const show = useSelector(state => state.showCounter);
 
   const incrementHandler = () => {
-    dispatch(counterActions.increment());
-    // dispatch({
-    //   type: 'add',
-    //   payload: 1, 
-    // });
-  }
+		// dispatch(counterActions.increment());
+		dispatch({
+			type: 'add',
+			payload: 1,
+		});
+	}
   const incrementBy5Handler = () => {
     dispatch(counterActions.increase(5));
     // dispatch({
