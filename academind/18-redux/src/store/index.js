@@ -33,12 +33,12 @@ import { createSlice, configureStore } from '@reduxjs/toolkit';
 const store = configureStore({
 	// reducer: counterSlice.reducer,
 	reducer: {
-		counter: counterSlice.reducer,
-		auth: authSlice.reducer,
+		counter: counterSlice,
+		auth: authSlice,
 	},
 });
 
-export const counterActions = counterSlice.actions;
-export const authActions = authSlice.actions;
+// export const counterActions = counterSlice.actions;
+// export const authActions = authSlice.actions;
 
 export default store;
