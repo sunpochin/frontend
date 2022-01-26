@@ -9,7 +9,10 @@ const Counter = () => {
 		console.log('state: ', state);
 		return state.counter.counter;
 	});
-  const show = useSelector(state => state.showCounter);
+  const show = useSelector((state) => {
+		console.log('show: ', state);
+		return state.counter.showCounter;
+	});
 
   const incrementHandler = () => {
 		// dispatch(counterActions.increment());
