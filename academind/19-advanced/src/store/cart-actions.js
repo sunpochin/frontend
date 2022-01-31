@@ -21,6 +21,7 @@ export const fetchCartData = () => {
 					dispatchzz(cartActions.replaceCart(cartData));
 				}
 			}
+
 			// dispatchzz(
 			// 	cartActions.replaceCart({
 			// 		items: cartData.items || [],
