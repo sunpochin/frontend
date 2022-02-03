@@ -1,34 +1,36 @@
 import counterSlice from './counter-slice';
 import authSlice from './auth-slice';
 
-// import redux, { createStore } from 'redux';
+import redux, { createStore } from 'redux';
 import { createSlice, configureStore } from '@reduxjs/toolkit';
 
-// const counterReducer = (state = initialState, action) => {
-// 	if ('add' === action.type) {
-// 		console.log('payload: ', action.payload);
-// 		return {
-// 			counter: state.counter + action.payload,
-// 			showCounter: state.showCounter,
-// 		};
-// 	}
+const initialState = { counter: 0, showCounter: true };
 
-// 	if ('decrement' === action.type) {
-// 		return {
-// 			counter: state.counter - 1,
-// 			showCounter: state.showCounter,
-// 		};
-// 	}
+const counterReducer = (state = initialState, action) => {
+	if ('add' === action.type) {
+		console.log('payload: ', action.payload);
+		return {
+			counter: state.counter + action.payload,
+			showCounter: state.showCounter,
+		};
+	}
 
-// 	if ('toggle' === action.type) {
-// 		return {
-// 			showCounter: !state.showCounter,
-// 			counter: state.counter,
-// 		};
-// 	}
-// 	return state;
-// };
-// const store = createStore(counterReducer);
+	if ('decrement' === action.type) {
+		return {
+			counter: state.counter - 1,
+			showCounter: state.showCounter,
+		};
+	}
+
+	if ('toggle' === action.type) {
+		return {
+			showCounter: !state.showCounter,
+			counter: state.counter,
+		};
+	}
+	return state;
+};
+const oldStore = createStore(counterReducer);
 
 const store = configureStore({
 	// reducer: counterSlice.reducer,
