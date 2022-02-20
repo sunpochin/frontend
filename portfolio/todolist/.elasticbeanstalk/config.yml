@@ -1,0 +1,17 @@
+branch-defaults:
+  master:
+    environment: Nodespot-env
+global:
+  application_name: node-spot
+  branch: main
+  default_ec2_keyname: singapore-pair
+  default_platform: Node.js 14 running on 64bit Amazon Linux 2
+  default_region: ap-southeast-1
+  include_git_submodules: true
+  instance_profile: null
+  platform_name: null
+  platform_version: null
+  profile: eb-cli
+  repository: origin
+  sc: git
+  workspace_type: Application
