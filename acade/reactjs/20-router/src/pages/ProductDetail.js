@@ -6,7 +6,6 @@ const ProductDetail = () => {
   return (
     <section>
       <h1>Product Detail</h1>
-      <h2>sss</h2>
       <p>{params.productId}</p>
     </section>
   );
