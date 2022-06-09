@@ -1,5 +1,6 @@
 import logo from './logo.svg';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
+import { Card } from './components/Card';
 import './App.css';
 
 const cardImages = [
@@ -14,18 +15,43 @@ const cardImages = [
 function App() {
   const [cards, setCards] = useState([]);
   const [turns, setTurns] = useState(0);
+  const [choiceOne, setChoiceOne] = useState(null);
+	const [choiceTwo, setChoiceTwo] = useState(null);
 
   // shuffled cards
   const shuffleCards = () => {
     const shuffledCards = [...cardImages, ...cardImages]
-      .sort(() => Math.random() - 0.5) // if positive, switch places
+      .sort(() => Math.random() - 0.5) // if positive, sort in ascending order, if negative, sort in descending order
       .map((card) => ({ ...card, id: Math.random() })); // add unique id
-
     setCards(shuffledCards);
     setTurns(0);
   }
   
-  console.log('cards: ', cards, ', turns: ', turns);
+  // console.log('cards: ', cards, ', turns: ', turns);
+
+  // handle a choice
+  const handleChoice = (card) => {
+    console.log(card);
+    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+  }
+
+  useEffect(() => {
+    console.log('choiceOne: ', choiceOne, ', choiceTwo: ', choiceTwo);
+    if (choiceOne && choiceTwo) {
+      if (choiceOne.src === choiceTwo.src) {
+        console.log('same!');
+      } else {
+        console.log('not same!');
+      }
+      resetTurn();
+    }
+  }, [choiceOne, choiceTwo])
+
+  const resetTurn = () => {
+    setChoiceOne(null);
+    setChoiceTwo(null);
+    setTurns(prevTurns => prevTurns + 1);
+  }
 
   return (
 		<div className='App'>
@@ -34,12 +60,9 @@ function App() {
 
 			<div className='card-grid'>
 				{cards.map((card) => (
-					<div key={card.id} className='card'>
-						<div>
-							<img className='front' src={card.src} />
-							<img className='back' src='/img/cover.png' />
-						</div>
-					</div>
+          <Card key={card.id} 
+            card={card}
+            handleChoice={handleChoice} ></Card>
 				))}
 			</div>
 
@@ -60,5 +83,14 @@ function App() {
 		</div>
 	);
 }
+
+					// {
+					// 	/* <div key={card.id} className='card'>
+					// 	<div>
+					// 		<img className='front' src={card.src} />
+					// 		<img className='back' src='/img/cover.png' />
+					// 	</div>
+					// </div> */
+					// }
 
 export default App;
