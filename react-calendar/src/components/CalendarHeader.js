@@ -8,10 +8,14 @@ export default function CalendarHeader() {
 			<h1 className='mr-10 text-xl text-gray-500 font-bold'>Calendar</h1>
 			<button className='border rounded py-2 px-4 mr-5'>Today</button>
 			<button>
-				<span className='material-icons-outlined'>chevron_left</span>
+				<span className='material-icons-outlined cursor-pointer text-gray-600 mx-2'>
+					chevron_left
+				</span>
 			</button>
 			<button>
-				<span className='material-icons-outlined'>chevron_right</span>
+				<span className='material-icons-outlined cursor-pointer text-gray-600 mx-2'>
+					chevron_right
+				</span>
 			</button>
 		</header>
 
