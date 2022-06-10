@@ -91,13 +91,5 @@ function App() {
 	);
 }
 
-// {
-// 	/* <div key={card.id} className='card'>
-// 	<div>
-// 		<img className='front' src={card.src} />
-// 		<img className='back' src='/img/cover.png' />
-// 	</div>
-// </div> */
-// }
 
 export default App;
