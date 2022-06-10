@@ -1,7 +1,7 @@
-import logo from './logo.svg';
-import { useEffect, useState } from 'react';
-import { Card } from './components/Card';
 import './App.css';
+
+import { useEffect, useState } from 'react';
+import { SingleCard } from './components/SingleCard';
 
 const cardImages = [
 	{ src: '/img/helmet-1.png' },
@@ -13,56 +13,58 @@ const cardImages = [
 ];
 
 function App() {
-  const [cards, setCards] = useState([]);
-  const [turns, setTurns] = useState(0);
-  const [choiceOne, setChoiceOne] = useState(null);
+	const [cards, setCards] = useState([]);
+	const [turns, setTurns] = useState(0);
+	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
 
-  // shuffled cards
-  const shuffleCards = () => {
-    const shuffledCards = [...cardImages, ...cardImages]
-      .sort(() => Math.random() - 0.5) // if positive, sort in ascending order, if negative, sort in descending order
-      .map((card) => ({ ...card, id: Math.random() })); // add unique id
-    setCards(shuffledCards);
-    setTurns(0);
-  }
-  
-  // console.log('cards: ', cards, ', turns: ', turns);
+	// shuffled cards
+	const shuffleCards = () => {
+		const shuffledCards = [...cardImages, ...cardImages]
+			.sort(() => Math.random() - 0.5) // if positive, sort in ascending order, if negative, sort in descending order
+			.map((card) => ({ ...card, id: Math.random() })); // add unique id
+		setCards(shuffledCards);
+		setTurns(0);
+	};
 
-  // handle a choice
-  const handleChoice = (card) => {
-    console.log(card);
-    choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
-  }
+	// console.log('cards: ', cards, ', turns: ', turns);
 
-  useEffect(() => {
-    console.log('choiceOne: ', choiceOne, ', choiceTwo: ', choiceTwo);
-    if (choiceOne && choiceTwo) {
-      if (choiceOne.src === choiceTwo.src) {
-        console.log('same!');
-      } else {
-        console.log('not same!');
-      }
-      resetTurn();
-    }
-  }, [choiceOne, choiceTwo])
+	// handle a choice
+	const handleChoice = (card) => {
+		console.log(card);
+		choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
+	};
 
-  const resetTurn = () => {
-    setChoiceOne(null);
-    setChoiceTwo(null);
-    setTurns(prevTurns => prevTurns + 1);
-  }
+	useEffect(() => {
+		console.log('choiceOne: ', choiceOne, ', choiceTwo: ', choiceTwo);
+		if (choiceOne && choiceTwo) {
+			if (choiceOne.src === choiceTwo.src) {
+				console.log('same!');
+			} else {
+				console.log('not same!');
+			}
+			resetTurn();
+		}
+	}, [choiceOne, choiceTwo]);
 
-  return (
+	const resetTurn = () => {
+		setChoiceOne(null);
+		setChoiceTwo(null);
+		setTurns((prevTurns) => prevTurns + 1);
+	};
+
+	return (
 		<div className='App'>
 			<h1>Magic Match</h1>
 			<button onClick={shuffleCards}>New Game</button>
 
 			<div className='card-grid'>
 				{cards.map((card) => (
-          <Card key={card.id} 
-            card={card}
-            handleChoice={handleChoice} ></Card>
+					<SingleCard
+						key={card.id}
+						card={card}
+						handleChoice={handleChoice}
+					></SingleCard>
 				))}
 			</div>
 
@@ -84,13 +86,13 @@ function App() {
 	);
 }
 
-					// {
-					// 	/* <div key={card.id} className='card'>
-					// 	<div>
-					// 		<img className='front' src={card.src} />
-					// 		<img className='back' src='/img/cover.png' />
-					// 	</div>
-					// </div> */
-					// }
+// {
+// 	/* <div key={card.id} className='card'>
+// 	<div>
+// 		<img className='front' src={card.src} />
+// 		<img className='back' src='/img/cover.png' />
+// 	</div>
+// </div> */
+// }
 
 export default App;
