@@ -31,7 +31,6 @@ function App() {
 
 	// handle a choice
 	const handleChoice = (card) => {
-		console.log(card);
 		choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
 	};
 
@@ -41,16 +40,24 @@ function App() {
       if (choiceOne.src === choiceTwo.src) {
         setCards(prevCards => {
           return prevCards.map(card => {
+            if (card.src === choiceOne.src) {
+              return { ...card, matched: true };
+            }
             return card;
           });
-        })
+        });
         console.log('same!');
+        resetTurn();
       } else {
+        setTimeout(() => {
+          resetTurn();
+        }, 1500);
         console.log('not same!');
       }
-      resetTurn();
     }
   }, [choiceOne, choiceTwo])
+
+  console.log(cards);
 
 	const resetTurn = () => {
 		setChoiceOne(null);
@@ -69,7 +76,8 @@ function App() {
 						key={card.id}
 						card={card}
 						handleChoice={handleChoice}
-					></SingleCard>
+            flipped={card === choiceOne || card === choiceTwo || card.matched}
+					/>
 				))}
 			</div>
 
