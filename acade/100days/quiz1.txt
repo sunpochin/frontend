@@ -1,0 +1,26 @@
+Question 1:
+What's a "pseudo-selector"?
+
+A CSS selector like :hover that allows you to set styles for an element that fulfills a certain condition.
+(e.g. the mouse cursor hovers over it)
+
+
+Q2:
+Why is it called "Cascading Style Sheets"?
+
+Because more than one CSS rule may apply to the same element.
+
+
+Q3: 
+What's special about the <img> element?
+
+It has no content, it's configured with attributes only.
+
+
+Q4:
+Which of the following file names would be a good choice for a second HTML file that shows some contact details about the page owner?
+
+contact.html
+
+
+
