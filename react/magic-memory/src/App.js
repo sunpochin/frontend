@@ -17,6 +17,7 @@ function App() {
 	const [turns, setTurns] = useState(0);
 	const [choiceOne, setChoiceOne] = useState(null);
 	const [choiceTwo, setChoiceTwo] = useState(null);
+	const [disabled, setDisabled] = useState(false);
 
 	// shuffled cards
 	const shuffleCards = () => {
@@ -25,25 +26,32 @@ function App() {
 			.map((card) => ({ ...card, id: Math.random() })); // add unique id
 		setCards(shuffledCards);
 		setTurns(0);
+
+		// setDisabled(false);
+		setChoiceOne(null);
+		setChoiceTwo(null);
 	};
-
 	// console.log('cards: ', cards, ', turns: ', turns);
-
 	// handle a choice
 	const handleChoice = (card) => {
 		choiceOne ? setChoiceTwo(card) : setChoiceOne(card);
 	};
 
+	useEffect(() => {
+		shuffleCards();
+	}, [])
+
   useEffect(() => {
-    console.log('choiceOne: ', choiceOne, ', choiceTwo: ', choiceTwo);
+    console.log('choiceOne: ', choiceOne, ', choiceTwo: ', choiceTwo)
     if (choiceOne && choiceTwo) {
+			setDisabled(true);
       if (choiceOne.src === choiceTwo.src) {
         setCards(prevCards => {
           return prevCards.map(card => {
             if (card.src === choiceOne.src) {
               return { ...card, matched: true };
             }
-            return card;
+            return card
           });
         });
         console.log('same!');
@@ -51,7 +59,7 @@ function App() {
       } else {
         setTimeout(() => {
           resetTurn();
-        }, 1500);
+        }, 500);
         console.log('not same!');
       }
     }
@@ -60,7 +68,8 @@ function App() {
   console.log(cards);
 
 	const resetTurn = () => {
-		setChoiceOne(null);
+		setDisabled(false)
+		setChoiceOne(null)
 		setChoiceTwo(null);
 		setTurns((prevTurns) => prevTurns + 1);
 	};
@@ -69,7 +78,6 @@ function App() {
 		<div className='App'>
 			<h1>Magic Match</h1>
 			<button onClick={shuffleCards}>New Game</button>
-
 			<div className='card-grid'>
 				{cards.map((card) => (
 					<SingleCard
@@ -77,24 +85,11 @@ function App() {
 						card={card}
 						handleChoice={handleChoice}
             flipped={card === choiceOne || card === choiceTwo || card.matched}
+						disabled={disabled}
 					/>
 				))}
 			</div>
-
-			{/* <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header> */}
+			{<p>Turns: {turns}</p>}
 		</div>
 	);
 }

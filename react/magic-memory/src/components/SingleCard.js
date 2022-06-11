@@ -1,12 +1,14 @@
 import './SingleCard.css';
 
-export const SingleCard = ({ card, handleChoice, flipped }) => {
-  const handleClick = () => {
-		handleChoice(card);
+export const SingleCard = ({ card, handleChoice, flipped, disabled }) => {
+	const handleClick = () => {
+		if (!disabled) {
+			handleChoice(card);
+		}
 	};
 	return (
 		<div className='card'>
-			<div className={flipped ? "flipped" : ""}>
+			<div className={flipped ? 'flipped' : ''}>
 				<img className='front' src={card.src} alt='card front' />
 				<img
 					className='back'
@@ -17,4 +19,4 @@ export const SingleCard = ({ card, handleChoice, flipped }) => {
 			</div>
 		</div>
 	);
-}
+};
