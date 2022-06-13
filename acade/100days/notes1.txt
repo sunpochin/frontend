@@ -18,3 +18,7 @@ use inline-block
 
 66. 
 margin-collapsing
+
+71. 
+Negative margin top
+  margin-top: -134px;
