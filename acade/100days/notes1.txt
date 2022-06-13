@@ -1,0 +1,20 @@
+56.
+CSS
+
+Inheritance
+(Selected) container rules apply to descendants.
+
+Cascading Style Sheets
+Multiple rules can be applied to the same element.
+
+Specificity
+More specific selector's rule wins over less specific selector.
+
+
+
+65. inline elements padding and margin issue:
+use inline-block
+
+
+66. 
+margin-collapsing
