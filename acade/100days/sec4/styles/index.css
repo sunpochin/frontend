@@ -1,0 +1,86 @@
+header {
+  margin-bottom: 64px;
+  text-align: center;
+}
+
+img {
+  width: 250px;
+}
+
+body {
+  background-color: rgb(233, 215, 207);
+  color: rgb(83, 75, 75);
+  margin: 50px;
+}
+
+main {
+  width: 500px;
+  margin: 50px auto;
+  padding: 30px 50px;
+  color: rgb(230, 230, 230);
+  background-color: rgb(129, 3, 203);
+  border-radius: 10px;
+}
+
+footer {
+  width: 500px;
+  margin: 50px auto;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  font-size: 48px;
+  color: rgb(71, 62, 62);
+}
+
+h2 {
+  /* padding: 20px 0 0; */
+  color: rgb(248, 242, 241);
+  font-family: 'Oswald', sans-serif;
+}
+
+span {
+  color: rgb(66, 2, 2);
+}
+
+
+a {
+  background-color: rgb(241, 241, 15);
+  color: rgb(15, 15, 15);
+  border: 1px solid rgb(167, 1, 78);
+  border-radius: 4px;
+  /* font-size: 24px; */
+}
+
+a:hover {
+  background-color: rgb(180, 12, 90);
+  text-decoration: none;
+}
+
+ul {
+  list-style-type: none;
+  margin: 16px 0 16px 0;
+  /* padding: 16px 0 16px 0; */
+}
+/* ol {
+  list-style: none;
+  width: 500px;
+  margin: 36px auto 0 auto;
+  padding-left: 0;
+  color: rgb(251, 255, 0);
+} */
+
+li {
+  margin: 16px 0 16px 0;
+  /* box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.2);
+  background-color: rgb(223, 136, 124);
+  border-radius: 6px; */
+  /* list-style: none;
+  list-style: square; */
+  /* color: rgb(251, 100, 0); */
+}
+
+.emp {
+  color: rgb(245, 241, 43);
+}
