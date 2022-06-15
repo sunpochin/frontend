@@ -1,16 +1,23 @@
-header {
-  margin-bottom: 64px;
-  text-align: center;
-}
-
-img {
-  width: 250px;
-}
-
 body {
-  background-color: rgb(233, 215, 207);
+  font-family: 'Roboto', sans-sarif;
+  background-color: rgb(244, 234, 255);
   color: rgb(83, 75, 75);
   margin: 50px;
+}
+
+h1 {
+  font-size: 52px;
+  color: rgb(88, 49, 196);
+}
+
+header {
+  text-align: center;
+  padding: 32px;
+  /* margin: 32px; */
+}
+
+header img {
+  width: 300px;
 }
 
 main {
@@ -28,11 +35,6 @@ footer {
   text-align: center;
 }
 
-h1 {
-  margin: 0;
-  font-size: 48px;
-  color: rgb(71, 62, 62);
-}
 
 h2 {
   /* padding: 20px 0 0; */
