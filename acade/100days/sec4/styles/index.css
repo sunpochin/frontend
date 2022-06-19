@@ -43,26 +43,23 @@ h2 {
   font-family: 'Oswald', sans-serif;
 }
 
-span {
-  color: rgb(66, 2, 2);
-}
-
-
 a {
-  /* background-color: rgb(241, 241, 15);
-  border: 1px solid rgb(167, 1, 78);
-  border-radius: 4px; */
+  text-decoration: none;
+  color: rgb(36, 3, 102);
+  background-color: rgb(255, 237, 177);
+  padding: 2px 6px;
+  border-radius: 4px;
 }
 
 a:hover {
-  background-color: rgb(180, 12, 90);
-  text-decoration: none;
+  background-color: rgb(250, 201, 39);
+  /* text-decoration: none; */
 }
 
 ul {
+  margin: 0;
+  padding: 0;
   list-style-type: none;
-  margin: 16px 0 16px 0;
-  /* padding: 16px 0 16px 0; */
 }
 /* ol {
   list-style: none;
@@ -73,15 +70,17 @@ ul {
 } */
 
 li {
-  margin: 16px 0 16px 0;
-  /* box-shadow: 1px 1px 4px rgb(0, 0, 0, 0.2);
-  background-color: rgb(223, 136, 124);
-  border-radius: 6px; */
-  /* list-style: none;
-  list-style: square; */
-  /* color: rgb(251, 100, 0); */
+  margin: 14px 0;
+  padding-left: 10px;
+  border-left: 5px solid transparent;
 }
 
-.emp {
-  color: rgb(245, 241, 43);
+.extra-important {
+  color: rgb(255, 237, 177);
+  /* border-left: 5px solid rgb(247, 209, 85); */
+  border-color: rgb(247, 209, 85);
+}
+
+.highlight {
+  font-weight: bold;
 }
