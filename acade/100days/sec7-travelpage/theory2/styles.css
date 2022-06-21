@@ -1,0 +1,44 @@
+
+div {
+  background-color: #c7c7c7;
+  padding: 20px;
+  text-align: center;
+}
+
+p {
+  color: black;
+  padding: 50px;
+  margin: 0;
+}
+
+#container {
+  background-color: #521751;
+  /* position: relative; */
+}
+
+#container p {
+  color: white;
+}
+
+#one {
+  background-color: #943092;
+}
+
+/* html {
+  margin: 50px;
+} */
+
+#two {
+  background-color: #c95bc7;
+  position: absolute;
+  /* position: fixed; */
+  top: 0;
+  left: 0;
+  width: 100%;
+  box-sizing: border-box;
+  border: 10px solid black;
+}
+
+#three {
+  background-color: #dd61db;
+}

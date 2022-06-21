@@ -98,3 +98,11 @@ CSS: a:hover { ... }
 Would select this HTML element for example: <a>...</a> (when the user hovers over it)
 
 This selector selects all elements that meet this "pseudo state" (i.e. all links that are hovered in this example)
+
+
+
+sec 7:
+120:
+flexbox: main axis, cross axis 
+
+max-width: 600px;
