@@ -50,3 +50,7 @@
 #hero-content a:hover {
   background-color: rgb(255, 238, 0);
 }
+
+#destination {
+  width: 200px;
+}
