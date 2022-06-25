@@ -38,10 +38,6 @@ header a:hover {
   background-color: rgb(255, 251, 0);;
 }
 
-footer {
-  background: linear-gradient(70deg, rgb(24, 24, 24), rgb(25, 29, 29));
-}
-
 /* ul > li {
   margin: 20px;
 } */
@@ -57,14 +53,21 @@ footer {
 
 }
 
+footer {
+  background: linear-gradient(70deg, rgb(24, 24, 24), rgb(25, 29, 29));
+  padding: 36px;
+}
+
+
 footer > ul {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 }
 
 footer li {
   width: 80px;
   height: 80px;
+  margin: 0px 50px;
 }
 
 footer img {
