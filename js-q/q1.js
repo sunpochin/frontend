@@ -1,4 +1,10 @@
 // 'use strict';
+
+// Using for...of
+for (const entry of list.entries()) {
+  console.log(entry);
+}
+console.log('end');
 {
 	x = 23; // Gives an error since 'x' is not declared
 	var x;
@@ -87,7 +93,7 @@ doSomething();
 }
 
 
-https://github.com/sudheerj/javascript-interview-questions#what-is-the-difference-between-call-apply-and-bind
+// https://github.com/sudheerj/javascript-interview-questions#what-is-the-difference-between-call-apply-and-bind
 
 // Call and apply are pretty interchangeable. Both execute the current function immediately. You need to decide whether it’s easier to send in an array or a comma separated list of arguments. You can remember by treating Call is for comma (separated list) and Apply is for Array.
 

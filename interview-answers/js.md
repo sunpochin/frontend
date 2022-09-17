@@ -27,7 +27,8 @@
 1. What options do we have to store data?
   - You can store user data in localStorage, cookies, or sessionStorage.
 
-3. four
+3. What is functional programming in JavaScript?
+  - Functional programming refers to using pure functions. In the context of JavaScript, this means familiarizing yourself with map, filter, and reduce. It's also worth understanding the concept of immutability.
 
  teeee
 5. fff
